@@ -1,12 +1,19 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from listings.models import Band;
+from listings.models import listing;
 def hello(request):
-    return HttpResponse('<h1>Hello Django!</h1>')
+    bands = Band.objects.all()
+    return render(request,
+    'listings/hello.html',
+    {'bands': bands})
 def about(request):
-    return HttpResponse('<h1>À propos</h1> <p>Nous adorons merch !</p>')
+    return HttpResponse('<h1>À propos</h1> <p>hi we are supporting gaza!</p>')
 def list(request):
-    return HttpResponse('<h1>Voici la liste des annonces</h1> <p>Nous adorons palestine</p>')
+    annonces=listing.objects.all()
+    return render(request,
+    'listings/list.html',
+    {'annonces': annonces})
 def contact(request):
     return HttpResponse('<h1>Contact us</h1> <p>i love palestine !</p>')
 

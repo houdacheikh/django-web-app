@@ -1,0 +1,13 @@
+<html>
+   <head><title>Merchex</title></head>
+        <body>
+            <h1>Voici la liste des annonces</h1> 
+            <p>Mes groupes annonces :<p>
+            <ul>
+            {% for annonce in annonces %}
+            <li>{{ annonce.title|upper }}</li>
+            {% endfor %} 
+            </ul>
+        </body>
+</html>          
+        
