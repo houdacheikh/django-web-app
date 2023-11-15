@@ -1,0 +1,11 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+    <h1>Voici la liste des contactes</h1> 
+        <p>Mes contactes :<p>
+        <ul>
+          {% for ct in cts %}
+          <li>{{ ct.email|upper }}</li>
+          <li>{{ ct.Nom|upper }}</li>
+          {% endfor %} 
+        </ul>
+{% endblock %} 

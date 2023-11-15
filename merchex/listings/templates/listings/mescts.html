@@ -1,0 +1,10 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+            <h1>Voici la liste des contactes</h1> 
+            <p>Mes contactes :<p>
+            <ul>
+            {% for c in ctt %}
+            <li> email: {{ c.email }} <br /> number: {{c.number}} <br /></li>
+            {% endfor %} 
+            </ul>
+{% endblock %}

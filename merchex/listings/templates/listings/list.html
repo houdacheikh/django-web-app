@@ -1,13 +1,12 @@
-<html>
-   <head><title>Merchex</title></head>
-        <body>
+{% extends 'listings/base.html' %}
+
+{% block content %}
             <h1>Voici la liste des annonces</h1> 
             <p>Mes groupes annonces :<p>
             <ul>
             {% for annonce in annonces %}
-            <li>{{ annonce.title|upper }}</li>
+            <li>{{ annonce.title }}</li>
             {% endfor %} 
             </ul>
-        </body>
-</html>          
-        
+{% endblock %}
+                    
