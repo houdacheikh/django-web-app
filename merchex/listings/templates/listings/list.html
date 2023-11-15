@@ -5,7 +5,12 @@
             <p>Mes groupes annonces :<p>
             <ul>
             {% for annonce in annonces %}
-            <li>{{ annonce.title }}</li>
+            <li> 
+                le titre: {{ annonce.title }} <br/>
+                la description :{{ annonce.description }}</br>
+                le status :{{ annonce.sold}}</br>
+                le type :{{ annonce.type}}</br>
+            </li>
             {% endfor %} 
             </ul>
 {% endblock %}
