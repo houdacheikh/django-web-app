@@ -1,0 +1,17 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+    <h2><a href="{% url 'trajet2' %}">Retourner a tous les groupes</a></h2>
+    <h2>{{band.name|upper }} <br /> </h2>
+    <ul>
+    <li> genre:{{band.get_genre_display}} <br />  </li>
+    <li>année de formation:{{band.year_formed}} <br /> </li> 
+    <li>status:{{band.active|yesno}} <br /> </li>
+    {% if band.official_homepage %}
+    <li><a href="{{ band.official_homepage }}">{{ band.official_homepage }}</a></li>
+    {% endif %}
+    <li><p>Biographie:{{band.biography}} <br /> </p></li>
+    {% for annonce in band.annonce_set.all %}
+    <li>{{band.annonce.title}}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

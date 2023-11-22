@@ -2,14 +2,10 @@
 
 {% block content %}
             <h1>Voici la liste des annonces</h1> 
-            <p>Mes groupes annonces :<p>
             <ul>
             {% for annonce in annonces %}
             <li> 
-                le titre: {{ annonce.title }} <br/>
-                la description :{{ annonce.description }}</br>
-                le status :{{ annonce.sold}}</br>
-                le type :{{ annonce.type}}</br>
+              <h2><a href="{% url 'trajet3' annonce.id %}">{{ annonce.title }}</a></h2>
             </li>
             {% endfor %} 
             </ul>
