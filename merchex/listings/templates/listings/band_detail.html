@@ -1,17 +1,19 @@
 {% extends 'listings/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
 {% block content %}
-    <h2><a href="{% url 'trajet2' %}">Retourner a tous les groupes</a></h2>
-    <h2>{{band.name|upper }} <br /> </h2>
-    <ul>
-    <li> genre:{{band.get_genre_display}} <br />  </li>
-    <li>année de formation:{{band.year_formed}} <br /> </li> 
-    <li>status:{{band.active|yesno}} <br /> </li>
-    {% if band.official_homepage %}
-    <li><a href="{{ band.official_homepage }}">{{ band.official_homepage }}</a></li>
-    {% endif %}
-    <li><p>Biographie:{{band.biography}} <br /> </p></li>
-    {% for annonce in band.annonce_set.all %}
-    <li>{{band.annonce.title}}</li>
-    {% endfor %}
-    </ul>
+<h2><a href="{% url 'trajet2' %}">Retourner a tous les groupes</a></h2>
+<h2>{{band.name|upper }} <br /> </h2>
+<ul>
+<li> genre:{{band.get_genre_display}} <br />  </li>
+<li>année de formation:{{band.year_formed}} <br /> </li> 
+<li>status:{{band.active|yesno}} <br /> </li>
+{% if band.official_homepage %}
+<li><a href="{{ band.official_homepage }}">{{ band.official_homepage }}</a></li>
+{% endif %}
+<li><p>Biographie:{{band.biography}} <br /> </p></li>
+<li><h2><a href="{% url 'trajet5' band.id %}">les annonce de ce groupe:</a></li></h2>
+</ul>
+<a href="{% url 'band-change' band.id %}">modifier</a>
+<a href="{% url 'band-delete' band.id %}">supprimer</a>
 {% endblock %}

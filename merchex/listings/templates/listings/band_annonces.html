@@ -2,6 +2,10 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
 {% block content %}
-<p>votre email est bien envoye</p>
-<a href="{% url 'retour' %}"> back</a>
-{% endblock %}
+<ul> 
+les annonce de ce groupe:</br>
+{% for annonce in anns %}
+<li>{{annonce.title}}</li>
+{% endfor %}
+</ul>
+ {% endblock %}

@@ -1,11 +1,15 @@
 {% extends 'listings/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
 {% block content %}
-    <h2><a href="{% url 'trajet4' %}">Retourner a tous les annonces</a></h2>
-    <ul>
-    <h2>{{annonce.title|upper}} <br /> </h2>
-    <li>{{annonce.description}} <br /> </li> 
-    <li>{{annonce.sold|yesno}} <br /> </li>
-    <li>{{annonce.get_type_display}} <br /></li>
-    <li><a href="{% url 'trajet' annonce.band.id %}"> {{annonce.band.name}}</li>
-    </ul>
+<h2><a href="{% url 'trajet4' %}">Retourner a tous les annonces</a></h2>
+<ul>
+<h2>{{annonce.title|upper}} <br /> </h2>
+<li>{{annonce.description}} <br /> </li> 
+<li>{{annonce.sold|yesno}} <br /> </li>
+<li>{{annonce.get_type_display}} <br /></li>
+<li><a href="{% url 'trajet' annonce.band.id %}"> {{annonce.band.name}}</li>
+<li><a href="{% url 'annonce-change' annonce.id %}"> modifier</li>
+<li><a href="{% url 'delete-annonce' annonce.id %}">supprimer</a></li>
+</ul>
 {% endblock %}

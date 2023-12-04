@@ -2,8 +2,8 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
 {% block content %}
-<p>Nous sommes là pour vous aider.</p>
-<form action="" method="post" novalidate>
+<p>Create a new band</p>
+<form action="" method="post" >
 {% csrf_token %}
 {{ form.as_p }}
 <input type="submit" value="Envoyer">

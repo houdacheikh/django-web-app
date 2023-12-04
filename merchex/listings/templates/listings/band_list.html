@@ -2,12 +2,12 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
 {% block content %}
-    <h1>ch7aaaaalkm !</h1>
-    <p>Mes groupes préférés sont :<p>
-    <ul>
-        <p>J'ai {{ bands|length }} groupes préférés.</p>
-        {% for band in bands %}
-        <li><h2><a href="{% url 'trajet' band.id %}">{{ band.name }}</a></li></h2>
-        {% endfor %}
-    </ul>
+<h1>ch7aaaaalkm !</h1>
+<p>Mes groupes préférés sont :<p>
+<ul>
+<p>J'ai {{ bands|length }} groupes préférés.</p>
+{% for band in bands %}
+<li><h2><a href="{% url 'trajet' band.id %}">{{ band.name }}</a></li></h2>
+{% endfor %}
+</ul>
 {% endblock %}            

@@ -1,13 +1,14 @@
 {% extends 'listings/base.html' %}
-
+{% load static %}
+<link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
 {% block content %}
-            <h1>Voici la liste des annonces</h1> 
-            <ul>
-            {% for annonce in annonces %}
-            <li> 
-              <h2><a href="{% url 'trajet3' annonce.id %}">{{ annonce.title }}</a></h2>
-            </li>
-            {% endfor %} 
-            </ul>
+<h1>Voici la liste des annonces</h1> 
+<ul>
+{% for annonce in annonces %}
+<li> 
+<h2><a href="{% url 'trajet3' annonce.id %}">{{ annonce.title }}</a></h2>
+</li>
+{% endfor %} 
+</ul>
 {% endblock %}
                     

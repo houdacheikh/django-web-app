@@ -18,6 +18,9 @@ class Band(models.Model):
     ,default=2000,null=True)
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
+class contact(models.Model):
+    email = models.fields.CharField(max_length=100)
+    number = models.IntegerField()
 class Annonce(models.Model):
     class Type(models.TextChoices):
         Clothing = 'CL'
@@ -28,6 +31,3 @@ class Annonce(models.Model):
     sold = models.fields.BooleanField(null=True)
     type =  models.fields.CharField(choices=Type.choices, max_length=5,default='pas de type specifié')
     band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
-class contact(models.Model):
-    email = models.fields.CharField(max_length=100)
-    number = models.IntegerField()

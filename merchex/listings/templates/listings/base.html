@@ -8,7 +8,11 @@
         <nav>
             <a href="{% url 'trajet2' %}">Groupes</a>
             <a href="{% url 'trajet4' %}">annonces</a>
-          </nav>
+            <a href="{% url 'retour' %}">contact-us</a>
+            <a href="{% url 'about-us' %}">A propos de nous</a>
+            <a href="{% url 'band-create' %}">create a new band</a>
+            <a href="{% url 'annonce-create' %}">nouvelle annonce</a>
+        </nav>
         {% block content %}{% endblock %}
     </body>
 </html>

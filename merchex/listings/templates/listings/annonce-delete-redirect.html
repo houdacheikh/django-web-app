@@ -2,10 +2,11 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
 {% block content %}
-<p>Nous sommes là pour vous aider.</p>
-<form action="" method="post" novalidate>
+<p>etes vous sur de supprimer cet element?????</p>
+<form action="" method="post" >
 {% csrf_token %}
 {{ form.as_p }}
+<a href="{% url 'trajet3' form.instance.id%}">cancel</a>
 <input type="submit" value="Envoyer">
 </form>
 {% endblock %}
